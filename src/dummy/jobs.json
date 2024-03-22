@@ -1,0 +1,364 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Senior React Developer",
+      "type": "Full Time",
+      "description": "Join our team in San Francisco, CA, as a Senior React Developer. We are looking for an experienced developer with expertise in React, Redux, and modern front-end technologies.",
+      "location": "San Francisco, CA",
+      "salary": "$100K - $120K",
+      "isRemote": false,
+      "company": {
+        "name": "ReactTech Solutions",
+        "website": "https://www.reacttechsolutions.com",
+        "description": "ReactTech Solutions is a leading software development company specializing in React.js solutions. We are dedicated to innovation and delivering high-quality products to our clients.",
+        "contactEmail": "contact@reacttechsolutions.com",
+        "contactPhone": "555-111-1111"
+      },
+      "postedAt": "2024-03-20T08:00:00Z",
+      "tags": ["React", "Front-End", "JavaScript"]
+    },
+    {
+      "id": 2,
+      "title": "React Native Developer",
+      "type": "Part Time",
+      "description": "Exciting part-time opportunity for a React Native Developer in Miami, FL. Join us to work on mobile app development using React Native, JavaScript, and UI/UX principles.",
+      "location": "Miami, FL",
+      "salary": "$80K - $90K",
+      "isRemote": true,
+      "company": {
+        "name": "ReactTech Solutions",
+        "website": "https://www.reacttechsolutions.com",
+        "description": "ReactTech Solutions is a leading software development company specializing in React.js solutions. We are dedicated to innovation and delivering high-quality products to our clients.",
+        "contactEmail": "contact@reacttechsolutions.com",
+        "contactPhone": "555-222-2222"
+      },
+      "postedAt": "2024-03-21T10:00:00Z",
+      "tags": ["React Native", "Mobile Development", "Part-Time"]
+    },
+    {
+      "id": 3,
+      "title": "React Front-End Developer",
+      "type": "Contract",
+      "description": "Join our team as a Contract React Front-End Developer in Seattle, WA. We are looking for a skilled developer to work on web applications using React, HTML, CSS, and JavaScript.",
+      "location": "Seattle, WA",
+      "salary": "$90K - $100K",
+      "isRemote": false,
+      "company": {
+        "name": "ReactWorks",
+        "website": "https://www.reactworks.com",
+        "description": "ReactWorks is a software development company specializing in React.js solutions. We focus on delivering high-quality products and excellent user experiences.",
+        "contactEmail": "contact@reactworks.com",
+        "contactPhone": "555-333-3333"
+      },
+      "postedAt": "2024-03-22T12:00:00Z",
+      "tags": ["React", "Front-End", "Contract"]
+    },
+    {
+      "id": 4,
+      "title": "React UI/UX Designer",
+      "type": "Freelance",
+      "description": "Freelance opportunity for a React UI/UX Designer in New York, NY. Collaborate with developers to create intuitive user interfaces for web applications using React and design principles.",
+      "location": "New York, NY",
+      "salary": "$80K - $90K",
+      "isRemote": true,
+      "company": {
+        "name": "ReactMasters",
+        "website": "https://www.reactmasters.com",
+        "description": "ReactMasters is a freelance platform connecting designers with businesses. Showcase your UI/UX skills and contribute to exciting projects.",
+        "contactEmail": "contact@reactmasters.com",
+        "contactPhone": "555-444-4444"
+      },
+      "postedAt": "2024-03-23T14:00:00Z",
+      "tags": ["React", "UI/UX", "Freelance"]
+    },
+    {
+      "id": 5,
+      "title": "React Internship",
+      "type": "Internship",
+      "description": "Internship opportunity for a React Developer in Chicago, IL. Gain hands-on experience in front-end development using React, HTML, CSS, and JavaScript.",
+      "location": "Chicago, IL",
+      "salary": "$60K - $70K",
+      "isRemote": false,
+      "company": {
+        "name": "ReactX",
+        "website": "https://www.reactx.com",
+        "description": "ReactX is a tech startup offering internships to aspiring developers. Join us to learn and grow your skills in React development.",
+        "contactEmail": "contact@reactx.com",
+        "contactPhone": "555-555-5555"
+      },
+      "postedAt": "2024-03-24T16:00:00Z",
+      "tags": ["React", "Internship", "Front-End"]
+    },
+    {
+      "id": 6,
+      "title": "Svelte Front-End Developer",
+      "type": "Full Time",
+      "description": "Join our team as a Full-Time Svelte Front-End Developer in San Francisco, CA. We are looking for someone with expertise in Svelte, HTML, CSS, and JavaScript.",
+      "location": "San Francisco, CA",
+      "salary": "$100K - $120K",
+      "isRemote": false,
+      "company": {
+        "name": "SvelteTech",
+        "website": "https://www.sveltetech.com",
+        "description": "SvelteTech is a leading technology company specializing in Svelte development. We focus on creating innovative web applications.",
+        "contactEmail": "contact@sveltetech.com",
+        "contactPhone": "555-666-6666"
+      },
+      "postedAt": "2024-03-25T18:00:00Z",
+      "tags": ["Svelte", "Front-End", "Full-Time"]
+    },
+    {
+      "id": 7,
+      "title": "Svelte UI/UX Designer",
+      "type": "Part Time",
+      "description": "Part-Time opportunity for a Svelte UI/UX Designer in Los Angeles, CA. Collaborate with developers to create visually appealing and user-friendly interfaces using Svelte.",
+      "location": "Los Angeles, CA",
+      "salary": "$80K - $90K",
+      "isRemote": true,
+      "company": {
+        "name": "SvelteWorks",
+        "website": "https://www.svelteworks.com",
+        "description": "SvelteWorks is a design and development company specializing in Svelte.js solutions. We strive to create seamless user experiences.",
+        "contactEmail": "contact@svelteworks.com",
+        "contactPhone": "555-777-7777"
+      },
+      "postedAt": "2024-03-26T20:00:00Z",
+      "tags": ["Svelte", "UI/UX", "Part-Time"]
+    },
+    {
+      "id": 8,
+      "title": "Svelte Developer",
+      "type": "Contract",
+      "description": "Contract opportunity for a Svelte Developer in Portland, OR. Work on web development projects using Svelte, HTML, CSS, and JavaScript.",
+      "location": "Portland, OR",
+      "salary": "$90K - $100K",
+      "isRemote": false,
+      "company": {
+        "name": "SvelteMasters",
+        "website": "https://www.sveltemasters.com",
+        "description": "SvelteMasters is a freelance platform connecting Svelte developers with businesses. Showcase your skills and contribute to exciting projects.",
+        "contactEmail": "contact@sveltemasters.com",
+        "contactPhone": "555-888-8888"
+      },
+      "postedAt": "2024-03-27T22:00:00Z",
+      "tags": ["Svelte", "Web Development", "Contract"]
+    },
+    {
+      "id": 9,
+      "title": "Svelte Front-End Engineer",
+      "type": "Freelance",
+      "description": "Freelance opportunity for a Svelte Front-End Engineer in Austin, TX. Collaborate with designers and developers to create responsive web applications using Svelte.",
+      "location": "Austin, TX",
+      "salary": "$80K - $90K",
+      "isRemote": true,
+      "company": {
+        "name": "SvelteX",
+        "website": "https://www.sveltex.com",
+        "description": "SvelteX is a freelance platform connecting talent with projects. Join us to work on cutting-edge web development using Svelte.",
+        "contactEmail": "contact@sveltex.com",
+        "contactPhone": "555-999-9999"
+      },
+      "postedAt": "2024-03-28T00:00:00Z",
+      "tags": ["Svelte", "Front-End", "Freelance"]
+    },
+    {
+      "id": 10,
+      "title": "Svelte Internship",
+      "type": "Internship",
+      "description": "Internship opportunity for a Svelte Developer in Chicago, IL. Gain hands-on experience in front-end development using Svelte, HTML, CSS, and JavaScript.",
+      "location": "Chicago, IL",
+      "salary": "$60K - $70K",
+      "isRemote": false,
+      "company": {
+        "name": "SvelteTech",
+        "website": "https://www.sveltetech.com",
+        "description": "SvelteTech is a leading technology company specializing in Svelte development. We offer internships to aspiring developers to learn and grow their skills.",
+        "contactEmail": "contact@sveltetech.com",
+        "contactPhone": "555-123-4567"
+      },
+      "postedAt": "2024-03-29T02:00:00Z",
+      "tags": ["Svelte", "Internship", "Front-End"]
+    },
+    {
+      "id": 11,
+      "title": "Angular Developer",
+      "type": "Full Time",
+      "description": "Join our team as a Full-Time Angular Developer in Seattle, WA. We are looking for someone with expertise in Angular, TypeScript, HTML, CSS, and JavaScript.",
+      "location": "Seattle, WA",
+      "salary": "$100K - $120K",
+      "isRemote": false,
+      "company": {
+        "name": "AngularTech",
+        "website": "https://www.angulartech.com",
+        "description": "AngularTech is a leading technology company specializing in Angular development. We focus on creating scalable web applications.",
+        "contactEmail": "contact@angulartech.com",
+        "contactPhone": "555-111-2222"
+      },
+      "postedAt": "2024-03-30T04:00:00Z",
+      "tags": ["Angular", "Full-Time", "Web Development"]
+    },
+    {
+      "id": 12,
+      "title": "Angular UI/UX Designer",
+      "type": "Part Time",
+      "description": "Part-Time opportunity for an Angular UI/UX Designer in Los Angeles, CA. Collaborate with developers to create user-friendly interfaces using Angular and design principles.",
+      "location": "Los Angeles, CA",
+      "salary": "$80K - $90K",
+      "isRemote": true,
+      "company": {
+        "name": "AngularWorks",
+        "website": "https://www.angularworks.com",
+        "description": "AngularWorks is a software development company specializing in Angular solutions. We strive to create exceptional user experiences.",
+        "contactEmail": "contact@angularworks.com",
+        "contactPhone": "555-333-4444"
+      },
+      "postedAt": "2024-03-31T06:00:00Z",
+      "tags": ["Angular", "UI/UX", "Part-Time"]
+    },
+    {
+      "id": 13,
+      "title": "Angular Developer",
+      "type": "Contract",
+      "description": "Contract opportunity for an Angular Developer in Portland, OR. Work on web development projects using Angular, TypeScript, HTML, CSS, and JavaScript.",
+      "location": "Portland, OR",
+      "salary": "$90K - $100K",
+      "isRemote": false,
+      "company": {
+        "name": "AngularMasters",
+        "website": "https://www.angularmasters.com",
+        "description": "AngularMasters is a freelance platform connecting Angular developers with businesses. Showcase your skills and contribute to exciting projects.",
+        "contactEmail": "contact@angularmasters.com",
+        "contactPhone": "555-555-6666"
+      },
+      "postedAt": "2024-04-01T08:00:00Z",
+      "tags": ["Angular", "Web Development", "Contract"]
+    },
+    {
+      "id": 14,
+      "title": "Angular Front-End Developer",
+      "type": "Freelance",
+      "description": "Freelance opportunity for an Angular Front-End Developer in Austin, TX. Collaborate with designers and developers to create responsive web applications using Angular.",
+      "location": "Austin, TX",
+      "salary": "$80K - $90K",
+      "isRemote": true,
+      "company": {
+        "name": "AngularX",
+        "website": "https://www.angularx.com",
+        "description": "AngularX is a freelance platform connecting talent with projects. Join us to work on cutting-edge web development using Angular.",
+        "contactEmail": "contact@angularx.com",
+        "contactPhone": "555-666-7777"
+      },
+      "postedAt": "2024-04-02T10:00:00Z",
+      "tags": ["Angular", "Front-End", "Freelance"]
+    },
+    {
+      "id": 15,
+      "title": "Angular Internship",
+      "type": "Internship",
+      "description": "Internship opportunity for an Angular Developer in Chicago, IL. Gain hands-on experience in front-end development using Angular, TypeScript, HTML, CSS, and JavaScript.",
+      "location": "Chicago, IL",
+      "salary": "$60K - $70K",
+      "isRemote": false,
+      "company": {
+        "name": "AngularTech",
+        "website": "https://www.angulartech.com",
+        "description": "AngularTech is a leading technology company specializing in Angular development. We offer internships to aspiring developers to learn and grow their skills.",
+        "contactEmail": "contact@angulartech.com",
+        "contactPhone": "555-777-8888"
+      },
+      "postedAt": "2024-04-03T12:00:00Z",
+      "tags": ["Angular", "Internship", "Front-End"]
+    },
+    {
+      "id": 16,
+      "title": "Vue.js Developer",
+      "type": "Full Time",
+      "description": "Join our team as a Full-Time Vue.js Developer in Seattle, WA. We are looking for someone with expertise in Vue.js, Vuex, HTML, CSS, and JavaScript.",
+      "location": "Seattle, WA",
+      "salary": "$100K - $120K",
+      "isRemote": false,
+      "company": {
+        "name": "VueTech",
+        "website": "https://www.vuetech.com",
+        "description": "VueTech is a leading technology company specializing in Vue.js development. We focus on creating scalable and interactive web applications.",
+        "contactEmail": "contact@vuetech.com",
+        "contactPhone": "555-999-1111"
+      },
+      "postedAt": "2024-04-04T14:00:00Z",
+      "tags": ["Vue.js", "Full-Time", "Web Development"]
+    },
+    {
+      "id": 17,
+      "title": "Vue.js UI/UX Designer",
+      "type": "Part Time",
+      "description": "Part-Time opportunity for a Vue.js UI/UX Designer in Los Angeles, CA. Collaborate with developers to create intuitive user interfaces using Vue.js and design principles.",
+      "location": "Los Angeles, CA",
+      "salary": "$80K - $90K",
+      "isRemote": true,
+      "company": {
+        "name": "VueWorks",
+        "website": "https://www.vueworks.com",
+        "description": "VueWorks is a software development company specializing in Vue.js solutions. We strive to create exceptional user experiences.",
+        "contactEmail": "contact@vueworks.com",
+        "contactPhone": "555-111-2222"
+      },
+      "postedAt": "2024-04-05T16:00:00Z",
+      "tags": ["Vue.js", "UI/UX", "Part-Time"]
+    },
+    {
+      "id": 18,
+      "title": "Vue.js Developer",
+      "type": "Contract",
+      "description": "Contract opportunity for a Vue.js Developer in Portland, OR. Work on web development projects using Vue.js, Vuex, HTML, CSS, and JavaScript.",
+      "location": "Portland, OR",
+      "salary": "$90K - $100K",
+      "isRemote": false,
+      "company": {
+        "name": "VueMasters",
+        "website": "https://www.vuemasters.com",
+        "description": "VueMasters is a freelance platform connecting Vue.js developers with businesses. Showcase your skills and contribute to exciting projects.",
+        "contactEmail": "contact@vuemasters.com",
+        "contactPhone": "555-222-3333"
+      },
+      "postedAt": "2024-04-06T18:00:00Z",
+      "tags": ["Vue.js", "Web Development", "Contract"]
+    },
+    {
+      "id": 19,
+      "title": "Vue.js Front-End Engineer",
+      "type": "Freelance",
+      "description": "Freelance opportunity for a Vue.js Front-End Engineer in Austin, TX. Collaborate with designers and developers to create responsive web applications using Vue.js.",
+      "location": "Austin, TX",
+      "salary": "$80K - $90K",
+      "isRemote": true,
+      "company": {
+        "name": "VueX",
+        "website": "https://www.vueX.com",
+        "description": "VueX is a freelance platform connecting talent with projects. Join us to work on cutting-edge web development using Vue.js.",
+        "contactEmail": "contact@vueX.com",
+        "contactPhone": "555-333-4444"
+      },
+      "postedAt": "2024-04-07T20:00:00Z",
+      "tags": ["Vue.js", "Front-End", "Freelance"]
+    },
+    {
+      "id": 20,
+      "title": "Vue.js Internship",
+      "type": "Internship",
+      "description": "Internship opportunity for a Vue.js Developer in Chicago, IL. Gain hands-on experience in front-end development using Vue.js, Vuex, HTML, CSS, and JavaScript.",
+      "location": "Chicago, IL",
+      "salary": "$60K - $70K",
+      "isRemote": false,
+      "company": {
+        "name": "VueTech",
+        "website": "https://www.vuetech.com",
+        "description": "VueTech is a leading technology company specializing in Vue.js development. We offer internships to aspiring developers to learn and grow their skills.",
+        "contactEmail": "contact@vuetech.com",
+        "contactPhone": "555-444-5555"
+      },
+      "postedAt": "2024-04-08T22:00:00Z",
+      "tags": ["Vue.js", "Internship", "Front-End"]
+    }
+  ]
+}
