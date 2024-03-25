@@ -17,7 +17,7 @@ type JobCardProps = {
 };
 
 const JobCard = ({ jobPost }: JobCardProps) => {
-  const [showDetails, setShowDetails] = useState(false);
+  const [showDetails] = useState(false);
   let description = jobPost?.description;
   if (!showDetails) {
     description = description.substring(0, 300) + '...';

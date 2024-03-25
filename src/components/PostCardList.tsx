@@ -1,15 +1,32 @@
-import { JobPost } from '../schema';
+import { useEffect, useState } from 'react';
 import PostCard from './PostCard';
+import { JobPost } from '../schema';
+import Spinner from './Spinner';
 
 type PostCardListProps = {
-  postList: JobPost[];
   isHome?: boolean;
 };
 
-const PostCardList = ({ postList, isHome = false }: PostCardListProps) => {
-  if (isHome) {
-    postList = postList.slice(0, 6);
-  }
+const PostCardList = ({ isHome = false }: PostCardListProps) => {
+  const [jobs, setJobs] = useState<JobPost[]>([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const fetchJobs = async () => {
+      const apiURL = isHome ? '/api/jobs?_limit=6' : '/api/jobs';
+      try {
+        const response = await fetch(apiURL);
+        const data = await response.json();
+        setLoading(false);
+        setJobs(data);
+      } catch (err) {
+        console.error('Fetch Jobs Error:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchJobs();
+  }, [isHome]);
+
   return (
     <div>
       <section className='px-4 py-10'>
@@ -17,11 +34,15 @@ const PostCardList = ({ postList, isHome = false }: PostCardListProps) => {
           <h2 className='text-3xl font-bold text-indigo-500 mb-6 text-center'>
             {isHome ? 'Browse Jobs' : 'Jobs Listing'}
           </h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:md:grid-cols-2 xl:grid-cols-3 gap-6'>
-            {postList?.map((jobPost) => (
-              <PostCard key={jobPost.id} jobPost={jobPost} />
-            ))}
-          </div>
+          {loading ? (
+            <Spinner loading={loading} />
+          ) : (
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:md:grid-cols-2 xl:grid-cols-3 gap-6'>
+              {jobs?.map((jobPost) => (
+                <PostCard key={jobPost.id} jobPost={jobPost} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </div>

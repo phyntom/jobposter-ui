@@ -1,5 +1,3 @@
-import jobData from './dummy/jobs.json';
-import { JobPost } from './schema';
 import {
   Route,
   RouterProvider,

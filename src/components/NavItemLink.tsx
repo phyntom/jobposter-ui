@@ -10,7 +10,6 @@ type NavItemLink = {
 const NavItemLink = ({ to, className, label }: NavItemLink) => {
   const location = useLocation();
   const isActive = location.pathname === to;
-  console.log(isActive);
   return (
     <>
       <Link
