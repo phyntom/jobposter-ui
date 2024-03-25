@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+# JobPoster: Your Frontend Job Search Companion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Find your dream frontend development role with JobPoster. Powered by React, Vite, Tailwindcss, and react-markdown, JobPoster makes staying on top of the latest opportunities easy.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Explore Frontend Jobs:** Search job postings focused on popular frameworks including:
+  - React
+  - Vue
+  - Svelte
+  - Angular
+  - Solid
+- **Dynamic Job Display:** View job descriptions with clear formatting thanks to react-markdown.
+- **Blazing-Fast User Experience:** Vite's lightning-quick development and production builds ensure smooth navigation.
+- **Beautifully Styled:** Tailwindcss provides a modern, polished aesthetic.
 
-## Expanding the ESLint configuration
+## How to Use JobPoster
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Visit the JobPoster website.
+2. Select your preferred frontend framework.
+3. Browse available job opportunities.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**Let JobPoster streamline your frontend job search!**
