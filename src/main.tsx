@@ -7,7 +7,7 @@ import { NextUIProvider } from '@nextui-org/react';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <NextUIProvider>
-      <main className={`text-foreground bg-background h-max font-poppins`}>
+      <main className={`text-foreground h-screen font-poppins`}>
         <App />
       </main>
     </NextUIProvider>

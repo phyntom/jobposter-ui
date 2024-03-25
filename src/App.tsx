@@ -1,34 +1,32 @@
-import CustomCard from './components/CustomCard';
-import Hero from './components/Hero';
-import NavBar from './components/Navbar';
-import Office from '/images/Office.svg';
-import Code from '/images/Code.svg';
 import jobData from './dummy/jobs.json';
 import { JobPost } from './schema';
-import PostCardList from './components/PostCardList';
-import { LuCodepen } from 'react-icons/lu';
-import { HiOutlineBuildingOffice2 } from 'react-icons/hi2';
-import HeroCards from './components/HeroCards';
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import MainLayout from './layout/MainLayout';
+import CartPage from './pages/CartPage';
+import JobsPage from './pages/JobsPage';
+import NewJob from './pages/NewJob';
+import NotFound from './pages/NotFound';
 
 function App() {
-  const jobsData: JobPost[] = JSON.parse(JSON.stringify(jobData)).jobs;
-
-  return (
-    <>
-      <NavBar />
-      <Hero />
-      <HeroCards />
-      <PostCardList postList={jobsData} />
-      {/* <section className='mx-auto my-24'>
-        <a
-          href='jobs.html'
-          className='block bg-black dark:bg-white dark:text-black text-white text-center py-4 px-6 my-8 rounded-xl hover:bg-gray-700'
-        >
-          View All Jobs
-        </a>
-      </section> */}
-    </>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<MainLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path='/new' element={<NewJob />} />
+        <Route path='/jobs' element={<JobsPage />} />
+        <Route path='/cart' element={<CartPage />} />
+        <Route path='*' element={<NotFound />} />
+      </Route>
+    )
   );
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;

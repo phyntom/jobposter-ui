@@ -5,6 +5,7 @@ import {
   CardFooter,
   Button,
 } from '@nextui-org/react';
+import { cn } from '../util/cn';
 
 type CustomCardProps = {
   cardTitle: string;
@@ -24,22 +25,16 @@ const CustomCard = ({
   buttonClassName,
 }: CustomCardProps) => {
   return (
-    <Card className={`py-4 ${cardClassName}`} isBlurred>
+    <Card className={cn(`py-4`, cardClassName)} isBlurred>
       <CardHeader className='pb-0 pt-2 px-4 flex-col items-start'>
         <p className='text-2xl font-bold'>{cardTitle}</p>
         {cardIcon}
       </CardHeader>
       <CardBody className='overflow-visible py-2'>
-        {/* <Image
-          alt='Card background'
-          className='object-cover rounded-xl'
-          src='/images/hero-card-complete.jpeg'
-          width={270}
-        /> */}
         <p>{cardDescription}</p>
       </CardBody>
       <CardFooter>
-        <Button radius='full' size='md' className={`${buttonClassName}`}>
+        <Button radius='full' size='md' className={cn(buttonClassName)}>
           {buttonText}
         </Button>
       </CardFooter>

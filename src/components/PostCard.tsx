@@ -1,5 +1,4 @@
 import {
-  Badge,
   Button,
   Card,
   CardBody,
@@ -8,12 +7,22 @@ import {
   Spinner,
 } from '@nextui-org/react';
 import { JobPost } from '../schema/Job';
+import { useState } from 'react';
+import { CiLocationOn } from 'react-icons/ci';
+import { BsCartPlus } from 'react-icons/bs';
+import Markdown from 'react-markdown';
 
 type JobCardProps = {
   jobPost: JobPost;
 };
 
 const JobCard = ({ jobPost }: JobCardProps) => {
+  const [showDetails, setShowDetails] = useState(false);
+  let description = jobPost?.description;
+  if (!showDetails) {
+    description = description.substring(0, 300) + '...';
+  }
+
   if (!jobPost)
     return (
       <div>
@@ -21,42 +30,45 @@ const JobCard = ({ jobPost }: JobCardProps) => {
       </div>
     );
   return (
-    <Card className='dark:bg-background-900 shadow-2xl'>
-      <CardHeader className='flex-wrap lg:flex-nowrap justify-between gap-4'>
+    <Card className='shadow-2xl px-4 md:px-6 border'>
+      <CardHeader className='flex-wrap xl:flex-nowrap justify-between gap-4'>
         <div className='w-full'>
           <div className='text-gray-500 my-2'>{jobPost?.location}</div>
           <h3 className='text-xl font-bold'>{jobPost?.title}</h3>
         </div>
-        {/* <Badge
-          content={jobPost?.type}
-          color='secondary'
-          className='sm:text-xs'
-          placement='bottom-left'
-        > */}
         <Button color='primary' variant='bordered' className='mx-auto w-full'>
-          {jobPost?.company.name}
+          {jobPost?.salary}
         </Button>
         {/* </Badge> */}
       </CardHeader>
-      <CardBody className='px-4 md:px-8 text-lg font-sans'>
-        <p>
-          {jobPost?.description?.length > 100
-            ? jobPost.description.substring(0, 350) + '...'
-            : jobPost.description}
-        </p>
+      <CardBody className=''>
+        <Markdown
+          skipHtml={false}
+          className='prose prose-sm prose-headings:text-lg prose-headings:font-medium'
+        >
+          {description}
+        </Markdown>
       </CardBody>
-      <CardFooter className=' border-t-1 border-t-zinc-200 z-10 justify-end gap-4'>
+      <CardFooter className='flex-col md:flex-row border-t-1 border-t-zinc-200 z-10 justify-between gap-2'>
+        <span className='text-base flex items-center'>
+          <CiLocationOn className='text-xl' />
+          <span>{jobPost.location}</span>
+        </span>
         <Button
-          className='text-base'
+          className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
           radius='full'
           size='md'
           href={`/job/${jobPost.id}`}
         >
-          View Job
+          Read More
         </Button>
-        <Button className='text-base bg-primary-600' radius='full' size='md'>
-          Save
-        </Button>
+        <Button
+          variant='ghost'
+          className='!px-[1px] border-none'
+          startContent={
+            <BsCartPlus className='text-lg xl:text-2xl font-bold text-primary-700' />
+          }
+        ></Button>
       </CardFooter>
     </Card>
   );
