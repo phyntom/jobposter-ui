@@ -10,6 +10,7 @@ import CartPage from './pages/CartPage';
 import JobsPage from './pages/JobsPage';
 import NewJob from './pages/NewJob';
 import NotFound from './pages/NotFound';
+import JobPage from './pages/JobPage';
 
 function App() {
   const router = createBrowserRouter(
@@ -18,6 +19,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path='/new' element={<NewJob />} />
         <Route path='/jobs' element={<JobsPage />} />
+        <Route path='/jobs/:id' element={<JobPage />} />
         <Route path='/cart' element={<CartPage />} />
         <Route path='*' element={<NotFound />} />
       </Route>

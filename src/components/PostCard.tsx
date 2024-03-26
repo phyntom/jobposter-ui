@@ -7,19 +7,19 @@ import {
   Spinner,
 } from '@nextui-org/react';
 import { JobPost } from '../schema/Job';
-import { useState } from 'react';
 import { CiLocationOn } from 'react-icons/ci';
-import { BsCartPlus } from 'react-icons/bs';
+import { BsCartPlus, BsTags } from 'react-icons/bs';
 import Markdown from 'react-markdown';
+import { Link } from 'react-router-dom';
 
 type JobCardProps = {
   jobPost: JobPost;
+  showFullDescription?: boolean;
 };
 
-const JobCard = ({ jobPost }: JobCardProps) => {
-  const [showDetails] = useState(false);
+const JobCard = ({ jobPost, showFullDescription = false }: JobCardProps) => {
   let description = jobPost?.description;
-  if (!showDetails) {
+  if (!showFullDescription) {
     description = description.substring(0, 300) + '...';
   }
 
@@ -33,7 +33,12 @@ const JobCard = ({ jobPost }: JobCardProps) => {
     <Card className='shadow-2xl px-4 md:px-6 border'>
       <CardHeader className='flex-wrap xl:flex-nowrap justify-between gap-4'>
         <div className='w-full'>
-          <div className='text-gray-500 my-2'>{jobPost?.location}</div>
+          <div className='flex items-center text-gray-500 my-2'>
+            <span>
+              <CiLocationOn className='text-xl' />
+            </span>
+            <span>{jobPost?.location}</span>
+          </div>
           <h3 className='text-xl font-bold'>{jobPost?.title}</h3>
         </div>
         <Button color='primary' variant='bordered' className='mx-auto w-full'>
@@ -49,26 +54,32 @@ const JobCard = ({ jobPost }: JobCardProps) => {
           {description}
         </Markdown>
       </CardBody>
-      <CardFooter className='flex-col md:flex-row border-t-1 border-t-zinc-200 z-10 justify-between gap-2'>
-        <span className='text-base flex items-center'>
-          <CiLocationOn className='text-xl' />
-          <span>{jobPost.location}</span>
+      <CardFooter className='flex-col border-t-1 border-t-zinc-200 z-10'>
+        <span className='flex items-start w-full text-base mb-4'>
+          <BsTags className='mr-2' />
+          <span>{jobPost.tags.join(' | ')}</span>
         </span>
-        <Button
-          className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
-          radius='full'
-          size='md'
-          href={`/job/${jobPost.id}`}
-        >
-          Read More
-        </Button>
-        <Button
-          variant='ghost'
-          className='!px-[1px] border-none'
-          startContent={
-            <BsCartPlus className='text-lg xl:text-2xl font-bold text-primary-700' />
-          }
-        ></Button>
+        <div className='flex flex-row items-center justify-between w-full'>
+          <Link
+            to={`/jobs/${jobPost.id}`}
+            className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full px-4 py-2'
+          >
+            {/* <Button
+              className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
+              radius='full'
+              size='md'
+            > */}
+            Read More
+            {/* </Button> */}
+          </Link>
+          <Button
+            variant='ghost'
+            className='!px-[1px] border-none'
+            startContent={
+              <BsCartPlus className='text-lg xl:text-2xl font-bold text-primary-700' />
+            }
+          ></Button>
+        </div>
       </CardFooter>
     </Card>
   );
