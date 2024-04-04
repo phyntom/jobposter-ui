@@ -19,5 +19,22 @@ Find your dream frontend development role with JobPoster. Powered by React, Vite
 1. Visit the JobPoster website.
 2. Select your preferred frontend framework.
 3. Browse available job opportunities.
+4. You can also add o front end job poster
+5. You can bookmark a job post
+
+## Tech Stack Used
+1. **React**
+2. **TanStackQuery**
+3. **React-Icons**
+4. **Zod**
+5. **React-hook-form**
+6. **Tailwindcss**
+7. **Shadcn**
+8. **React-markdown**
+9. **React-router-dom**
 
 **Let JobPoster streamline your frontend job search!**
+
+## App Screenshots
+### Landing 
+![image](https://drive.google.com/uc?export=view&id=19ksQRLCRUX_SuNufm6AsoJlBkhruaiCV)
