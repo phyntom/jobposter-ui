@@ -22,7 +22,7 @@ Find your dream frontend development role with JobPoster. Powered by React, Vite
 4. You can also add o front end job poster
 5. You can bookmark a job post
 
-## Tech Stack Used
+## Tools and Libraries used
 1. **React**
 2. **TanStackQuery**
 3. **React-Icons**
