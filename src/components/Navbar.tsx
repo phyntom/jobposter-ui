@@ -1,6 +1,6 @@
 import NavItemLink from './NavItemLink';
 import { IoReorderThree } from 'react-icons/io5';
-import { Sheet } from '@components/ui/Sheet';
+import { Sheet, SheetTrigger } from '@/components/ui/sheet';
 
 function NavBar() {
   return (
@@ -43,8 +43,9 @@ function NavBar() {
         </div>
         <div className='text-4xl px-4'>
           <Sheet>
-            <SheetTrigger></SheetTrigger>
-            <IoReorderThree />
+            <SheetTrigger>
+              <IoReorderThree />
+            </SheetTrigger>
           </Sheet>
         </div>
       </div>
