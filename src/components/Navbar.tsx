@@ -1,13 +1,6 @@
-import {
-  Badge,
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-} from '@nextui-org/react';
-import { SiSemanticuireact } from 'react-icons/si';
 import NavItemLink from './NavItemLink';
 import { IoReorderThree } from 'react-icons/io5';
+import { Sheet } from '@components/ui/Sheet';
 
 function NavBar() {
   return (
@@ -49,7 +42,10 @@ function NavBar() {
           </ul>
         </div>
         <div className='text-4xl px-4'>
-          <IoReorderThree />
+          <Sheet>
+            <SheetTrigger></SheetTrigger>
+            <IoReorderThree />
+          </Sheet>
         </div>
       </div>
     </nav>
