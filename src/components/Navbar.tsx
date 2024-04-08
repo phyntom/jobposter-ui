@@ -1,6 +1,14 @@
 import NavItemLink from './NavItemLink';
 import { IoReorderThree } from 'react-icons/io5';
-import { Sheet, SheetTrigger } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
+import { NavLink } from 'react-router-dom';
 
 function NavBar() {
   return (
@@ -46,6 +54,27 @@ function NavBar() {
             <SheetTrigger>
               <IoReorderThree />
             </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>Are you absolutely sure?</SheetTitle>
+                <div>
+                  <ul className=' place-content-start list-none p-0 flex flex-col gap-4'>
+                    <li className='w-full'>
+                      <NavLink to='/'>Home</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to='/jobs'>Jobs</NavLink>
+                    </li>
+                    <li className='w-full'>
+                      <NavLink to='/new'>New</NavLink>
+                    </li>
+                    <li className='w-full'>
+                      <NavLink to='/cart'>Cart</NavLink>
+                    </li>
+                  </ul>
+                </div>
+              </SheetHeader>
+            </SheetContent>
           </Sheet>
         </div>
       </div>
