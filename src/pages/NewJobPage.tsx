@@ -1,11 +1,9 @@
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import TagsInput from '../components/TagsInput';
 import { useState } from 'react';
 import React from 'react';
-import { Label } from '@radix-ui/react-label';
 import { Input } from '@/components/ui/input';
 import {
   Select,
@@ -20,6 +18,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
 
 const phoneValidator = new RegExp(/^\+(?:[0-9] ?){6,14}[0-9]$/);
 

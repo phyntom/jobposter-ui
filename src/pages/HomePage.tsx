@@ -2,6 +2,7 @@ import Hero from '../components/Hero';
 import HeroCards from '../components/HeroCards';
 import PostCardList from '../components/PostCardList';
 
+
 const HomePage = () => {
   return (
     <>
@@ -11,5 +12,4 @@ const HomePage = () => {
     </>
   );
 };
-
 export default HomePage;

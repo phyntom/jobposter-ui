@@ -1,11 +1,12 @@
-import {
-  CardHeader,
-  CardBody,
-  Card,
-  CardFooter,
-  Button,
-} from '@nextui-org/react';
+import { PropsWithChildren } from 'react';
 import { cn } from '../util/cn';
+import { Button } from './ui/button';
+import {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardContent,
+} from '@/components/ui/card';
 
 type CustomCardProps = {
   cardTitle: string;
@@ -16,7 +17,7 @@ type CustomCardProps = {
   buttonClassName?: string;
 };
 
-const CustomCard = ({
+const CustomCard: React.FC<PropsWithChildren<CustomCardProps>> = ({
   cardTitle,
   cardDescription,
   cardIcon,
@@ -25,18 +26,16 @@ const CustomCard = ({
   buttonClassName,
 }: CustomCardProps) => {
   return (
-    <Card className={cn(`py-4`, cardClassName)} isBlurred>
+    <Card className={cn(`py-4`, cardClassName)}>
       <CardHeader className='pb-0 pt-2 px-4 flex-col items-start'>
         <p className='text-2xl font-bold'>{cardTitle}</p>
         {cardIcon}
       </CardHeader>
-      <CardBody className='overflow-visible py-2'>
+      <CardContent className='overflow-visible py-2'>
         <p>{cardDescription}</p>
-      </CardBody>
+      </CardContent>
       <CardFooter>
-        <Button radius='full' size='md' className={cn(buttonClassName)}>
-          {buttonText}
-        </Button>
+        <Button className={cn(buttonClassName)}>{buttonText}</Button>
       </CardFooter>
     </Card>
   );

@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 import typography from '@tailwindcss/typography';
-import { nextui } from '@nextui-org/react';
-
 export default {
   darkMode: ['class'],
   content: [
@@ -20,6 +18,12 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+      gridTemplateColumns: {
+        '70/30': '70% 30%',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -76,5 +80,5 @@ export default {
       },
     },
   },
-  plugins: [nextui(), require('tailwindcss-animate'), typography],
+  plugins: [require('tailwindcss-animate'), typography],
 };

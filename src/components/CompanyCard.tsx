@@ -2,8 +2,7 @@ import { HiOutlineBuildingOffice2 } from 'react-icons/hi2';
 import { Company } from '../schema';
 import { MdOutlineAttachEmail, MdOutlineSettingsPhone } from 'react-icons/md';
 import { TbWorldWww } from 'react-icons/tb';
-import { Divider } from '@nextui-org/react';
-
+import { Separator } from '@/components/ui/separator';
 const CompanyCard = ({
   name,
   description,
@@ -17,10 +16,10 @@ const CompanyCard = ({
         <HiOutlineBuildingOffice2 className='text-4xl size-11' />
         <span className='hidden text-xl font-light'>Company Information</span>
       </div>
-      <Divider className='my-4' />
+      <Separator className='my-4' />
       <h2 className='text-2xl'>{name}</h2>
       <p className='my-2'>{description}</p>
-      <Divider className='my-4' />
+      <Separator className='my-4' />
       <div className='flex items-center justify-start'>
         <MdOutlineAttachEmail className='size-8' />
         <span className='text-primary md:text-base md:truncate p-2 ml-8'>
