@@ -6,7 +6,9 @@ const MainLayout = () => {
   return (
     <>
       <NavBar />
-      <Outlet />
+      <main className={`font-poppins min-h-svh`}>
+        <Outlet />
+      </main>
       <Footer />
     </>
   );

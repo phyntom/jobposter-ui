@@ -1,16 +1,19 @@
+import { JobPost } from "../schema/Job";
+import { CiLocationOn } from "react-icons/ci";
+import { BsTags } from "react-icons/bs";
+import Markdown from "react-markdown";
+import { Link } from "react-router-dom";
+import { cn } from "@/util/cn";
+import Spinner from "./Spinner";
+import { Button } from "./ui/button";
 import {
-  Button,
   Card,
-  CardBody,
-  CardFooter,
   CardHeader,
-  Spinner,
-} from '@nextui-org/react';
-import { JobPost } from '../schema/Job';
-import { CiLocationOn } from 'react-icons/ci';
-import { BsCartPlus, BsTags } from 'react-icons/bs';
-import Markdown from 'react-markdown';
-import { Link } from 'react-router-dom';
+  CardFooter,
+  CardContent,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 type JobCardProps = {
   jobPost: JobPost;
@@ -20,65 +23,65 @@ type JobCardProps = {
 const JobCard = ({ jobPost, showFullDescription = false }: JobCardProps) => {
   let description = jobPost?.description;
   if (!showFullDescription) {
-    description = description.substring(0, 300) + '...';
+    description = description.substring(0, 150) + "...";
   }
 
   if (!jobPost)
     return (
       <div>
-        <Spinner />
+        <Spinner loading={false} />
       </div>
     );
   return (
-    <Card className='shadow-2xl px-4 md:px-6 border'>
-      <CardHeader className='flex-wrap xl:flex-nowrap justify-between gap-4'>
-        <div className='w-full'>
-          <div className='flex items-center text-gray-500 my-2'>
+    <Card className="shadow-2xl px-2 md:px-2 border">
+      <CardHeader className="flex flex-row items">
+        <div className="w-full md:w-[60%]">
+          <h3 className="text-xl font-bold">{jobPost?.title}</h3>
+          <Badge className="bg-secondary text-secondary-foreground">
+            {jobPost?.salary}
+          </Badge>
+        </div>
+        <div className="md:w-[40%]">
+          <div className="flex items-start text-gray-500 text-sm">
             <span>
-              <CiLocationOn className='text-xl' />
+              <CiLocationOn className="size-4" />
             </span>
             <span>{jobPost?.location}</span>
           </div>
-          <h3 className='text-xl font-bold'>{jobPost?.title}</h3>
         </div>
-        <Button color='primary' variant='bordered' className='mx-auto w-full'>
-          {jobPost?.salary}
-        </Button>
-        {/* </Badge> */}
       </CardHeader>
-      <CardBody className=''>
+      <Separator className="mb-2" />
+      <CardContent className="">
         <Markdown
           skipHtml={false}
-          className='prose prose-sm prose-headings:text-lg prose-headings:font-medium'
+          className="prose prose-sm prose-headings:text-lg prose-headings:font-medium text-muted-foreground"
         >
           {description}
         </Markdown>
-      </CardBody>
-      <CardFooter className='flex-col border-t-1 border-t-zinc-200 z-10'>
-        <span className='flex items-start w-full text-base mb-4'>
-          <BsTags className='mr-2' />
-          <span>{jobPost.tags.join(' | ')}</span>
+      </CardContent>
+      <CardFooter className="flex-col border-t-1 border-t-zinc-200 z-10">
+        <span className="flex items-start w-full text-base mb-4">
+          <BsTags className="mr-2" />
+          <span>{jobPost.tags.join(" | ")}</span>
         </span>
-        <div className='flex flex-row items-center justify-between w-full'>
-          <Link
-            to={`/jobs/${jobPost.id}`}
-            className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full px-4 py-2'
-          >
-            {/* <Button
-              className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
-              radius='full'
-              size='md'
-            > */}
-            Read More
-            {/* </Button> */}
-          </Link>
+        <div className="flex flex-row items-center justify-between w-full">
+          {!showFullDescription && (
+            <Link
+              to={`/jobs/${jobPost.id}`}
+              className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-full px-4 py-2"
+            >
+              Read More
+            </Link>
+          )}
           <Button
-            variant='ghost'
-            className='!px-[1px] border-none'
-            startContent={
-              <BsCartPlus className='text-lg xl:text-2xl font-bold text-primary-700' />
-            }
-          ></Button>
+            className={cn(
+              showFullDescription
+                ? "bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-foreground border-none"
+                : ""
+            )}
+          >
+            Save
+          </Button>
         </div>
       </CardFooter>
     </Card>
