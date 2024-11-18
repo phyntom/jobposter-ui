@@ -1,7 +1,15 @@
 services:
-   -type: web
-   name: jobposter
-   env: node
-   plan: free
-   buildCommand: 'npm install && npm run build'
-   startCommand: 'npm start'
+   - type: web
+     name: jobposter-ui
+     plan: free
+     env: docker
+     dockerfilePath: ./Dockerfile
+     # Optional: Environment variables
+     envVars:
+        - key: NODE_ENV
+          value: production
+        - key: PORT
+          value: 3000
+     previews:
+        generation: automatic # Enable service previews
+
