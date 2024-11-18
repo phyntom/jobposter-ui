@@ -17,19 +17,17 @@ export default defineConfig(({ mode }) => {
             env.NODE_ENV === 'development'
                ? {
                     '/api': {
-                       target: 'http://localhost:5000/api', // Your JSON server port in local dev
-                       changeOrigin: true,
-                       rewrite: function (path) {
-                          return path.replace(/^\/api/, '');
-                       },
+                       target: 'https://jobposter-api.onrender.com',
+                       changeOrigin: true, // Adjust the origin of the host header to the target
+                       rewrite: (path) => path.replace(/^\/api/, '/api'), // Ensure the /api path is preserved
                     },
                  }
                : {
                     '/api': {
-                       target: 'https://jobposter-api.onrender.com/api', // Your JSON server port in local dev
+                       target: 'https://jobposter-api.onrender.com', // Your JSON server port in local dev
                        changeOrigin: true,
                        rewrite: function (path) {
-                          return path.replace(/^\/api/, '');
+                          return path.replace(/^\/api/, '/api');
                        },
                     },
                  }, // No proxy in production, as everything runs on the same domain
