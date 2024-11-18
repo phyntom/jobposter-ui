@@ -1,7 +1,9 @@
 services:
-   -type: web
-   name: jobposter
-   env: node
-   plan: free
-   buildCommand: 'npm install && npm run build'
-   startCommand: 'npm start'
+   - type: web
+     name: jobposter-ui
+     runtime: static
+     buildCommand: npm build
+     staticPublishPath: ./dist
+     previews:
+        generation: automatic # Enable service previews
+
