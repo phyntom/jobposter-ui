@@ -3,8 +3,12 @@ services:
      name: jobposter-ui
      runtime: static
      repo: https://github.com/phyntom/jobposter-ui.git
-     buildCommand: 'npm install && npm run build'
+     buildCommand: npm install && npm install -D @types/node && npm run build
      staticPublishPath: ./dist
+     # Optional: Environment variables
+     envVars:
+        - key: NODE_ENV
+          value: production
      previews:
         generation: automatic # Enable service previews
 
