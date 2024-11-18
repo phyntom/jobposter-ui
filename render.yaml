@@ -1,16 +1,16 @@
 previews:
    generation: automatic # Enable service previews
 services:
-  - type: web
-    runtime: docker
-    plan: free
-    name: jobposter-ui
-    repo: https://github.com/phyntom/jobposter-ui.git # Default: Repo containing render.yaml
-    dockerfilePath: ./Dockerfile
-     # Optional: Environment variables
+   - type: web
+     runtime: docker
+     plan: free
+     name: jobposter-ui
+     repo: https://github.com/phyntom/jobposter-ui.git # Default: Repo containing render.yaml
+     dockerfilePath:
+        ./Dockerfile
+        # Optional: Environment variables
      envVars:
         - key: NODE_ENV
           value: production
         - key: PORT
           value: 3000
-
