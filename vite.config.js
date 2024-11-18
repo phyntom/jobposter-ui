@@ -4,6 +4,11 @@ import path from 'path';
 
 export default defineConfig(({ mode }) => {
    const env = loadEnv(mode, process.cwd(), '');
+
+   // Check if the necessary environment variables are set for both dev and prod
+   console.log('API_URL:', env.API_URL); // Debugging to check API_URL value
+   console.log('PORT:', env.PORT); // Debugging to check PORT value
+
    return {
       plugins: [react()],
       resolve: {
@@ -12,25 +17,14 @@ export default defineConfig(({ mode }) => {
       base: '/', // Set base to root for correct asset paths in production
       server: {
          host: true,
-         port: env.PORT,
-         proxy:
-            env.NODE_ENV === 'development'
-               ? {
-                    '/api': {
-                       target: 'https://jobposter-api.onrender.com',
-                       changeOrigin: true, // Adjust the origin of the host header to the target
-                       rewrite: (path) => path.replace(/^\/api/, '/api'), // Ensure the /api path is preserved
-                    },
-                 }
-               : {
-                    '/api': {
-                       target: 'https://jobposter-api.onrender.com', // Your JSON server port in local dev
-                       changeOrigin: true,
-                       rewrite: function (path) {
-                          return path.replace(/^\/api/, '/api');
-                       },
-                    },
-                 }, // No proxy in production, as everything runs on the same domain
+         port: env.PORT || 3000, // Default to 3000 if PORT is not set
+         proxy: {
+            '/api': {
+               target: env.API_URL, // API URL from .env file
+               changeOrigin: true,
+               rewrite: (path) => path.replace(/^\/api/, '/api'),
+            },
+         },
       },
    };
 });
