@@ -1,46 +1,42 @@
-# set the base image to create the image for react app
+# Use a Node.js image as the base
 FROM node:22-alpine
 
-# create a user with permissions to run the app
-# -S -> create a system user
-# -G -> add the user to a group
-# This is done to avoid running the app as root
-# If the app is run as root, any vulnerability in the app can be exploited to gain access to the host system
-# It's a good practice to run the app as a non-root user
+# Create a user with permissions to run the app (non-root for security)
 RUN addgroup app && adduser -S -G app app
 
-# set the user to run the app
+# Set the user to run the app
 USER app
 
-# set the working directory to /app
+# Set the working directory to /app
 WORKDIR /app
 
-# copy package.json and package-lock.json to the working directory
-# This is done before copying the rest of the files to take advantage of Docker’s cache
-# If the package.json and package-lock.json files haven’t changed, Docker will use the cached dependencies
+# Copy package.json and package-lock.json for dependency installation
 COPY package*.json ./
 
-# sometimes the ownership of the files in the working directory is changed to root
-# and thus the app can't access the files and throws an error -> EACCES: permission denied
-# to avoid this, change the ownership of the files to the root user
+# Temporarily switch to root to set permissions
 USER root
 
-# change the ownership of the /app directory to the app user
-# chown -R <user>:<group> <directory>
-# chown command changes the user and/or group ownership of for given file.
+# Change the ownership of /app directory to the app user
 RUN chown -R app:app .
 
-# change the user back to the app user
+# Switch back to the non-root app user
 USER app
 
-# install dependencies
+# Install dependencies
 RUN npm install
 
-# copy the rest of the files to the working directory
+# Copy the rest of the application files
 COPY . .
 
-# expose port 5173 to tell Docker that the container listens on the specified network ports at runtime
+# Build the Vite app for production (outputs to `dist` folder)
+RUN npm run build
+
+# Switch to a lightweight Node.js server to serve static files
+# Serve the static files from the `dist` directory using `serve` package or similar
+RUN npm install -g serve
+
+# Expose the port you plan to use
 EXPOSE 3000
 
-# command to run the app
-CMD npm run dev
+# Command to serve the app in production mode using `serve`
+CMD ["serve", "-s", "dist", "-l", "3000"]
