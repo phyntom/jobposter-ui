@@ -3,7 +3,7 @@ services:
      name: jobposter-ui
      runtime: static
      repo: https://github.com/phyntom/jobposter-ui.git
-     buildCommand: npm install && npm install -D @types/node && npm run build
+     buildCommand: npm install && npm i --save-dev @types/node && npm run build
      staticPublishPath: ./dist
      # Optional: Environment variables
      envVars:
