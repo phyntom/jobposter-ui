@@ -2,7 +2,7 @@ services:
    - type: web
      name: jobposter-ui
      runtime: static
-     buildCommand: npm build
+     buildCommand: 'npm build'
      staticPublishPath: ./dist
      previews:
         generation: automatic # Enable service previews
