@@ -1,14 +1,15 @@
 services:
    - type: web
      name: jobposter-ui
-     runtime: static
-     repo: https://github.com/phyntom/jobposter-ui.git
-     buildCommand: 'yarn build'
-     staticPublishPath: ./dist
+     plan: free
+     env: docker
+     dockerfilePath: ./Dockerfile
      # Optional: Environment variables
      envVars:
         - key: NODE_ENV
           value: production
+        - key: PORT
+          value: 3000
      previews:
         generation: automatic # Enable service previews
 
