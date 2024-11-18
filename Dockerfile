@@ -16,11 +16,12 @@ COPY . .
 # Build the Vite app for production (outputs to `dist` folder)
 RUN npm run build
 
-# Install a lightweight static server to serve the built files
+# Switch to a lightweight Node.js server to serve static files
+# Serve the static files from the `dist` directory using `serve` package or similar
 RUN npm install -g serve
 
 # Expose port 3000
 EXPOSE 3000
 
 # Command to serve the app in production mode using `serve`
-CMD ["serve", "-s", "dist", "-l", "3000"]
+CMD ["sh", "-c", "serve -s dist -l ${PORT:-3000} -H 0.0.0.0 -n"]
