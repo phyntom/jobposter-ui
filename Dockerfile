@@ -1,26 +1,11 @@
-# Use a Node.js image as the base
+# Use the official Node.js image as the base
 FROM node:22-alpine
-
-# Create a user with permissions to run the app (non-root for security)
-RUN addgroup app && adduser -S -G app app
-
-# Set the user to run the app
-USER app
 
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy package.json and package-lock.json for dependency installation
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
-
-# Temporarily switch to root to set permissions
-USER root
-
-# Change the ownership of /app directory to the app user
-RUN chown -R app:app .
-
-# Switch back to the non-root app user
-USER app
 
 # Install dependencies
 RUN npm install
@@ -31,11 +16,10 @@ COPY . .
 # Build the Vite app for production (outputs to `dist` folder)
 RUN npm run build
 
-# Switch to a lightweight Node.js server to serve static files
-# Serve the static files from the `dist` directory using `serve` package or similar
+# Install a lightweight static server to serve the built files
 RUN npm install -g serve
 
-# Expose the port you plan to use
+# Expose port 3000
 EXPOSE 3000
 
 # Command to serve the app in production mode using `serve`
