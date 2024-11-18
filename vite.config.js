@@ -2,10 +2,13 @@ import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
-
-
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ mode }) => {
    const env = loadEnv(mode, process.cwd(), '');
+
+   // Check if the necessary environment variables are set for both dev and prod
+   console.log('API_URL:', env.API_URL); // Debugging to check API_URL value
+   console.log('PORT:', env.PORT); // Debugging to check PORT value
+
    return {
       plugins: [react()],
       resolve: {
@@ -13,27 +16,8 @@ export default defineConfig(({ command, mode }) => {
       },
       base: '/', // Set base to root for correct asset paths in production
       server: {
-         port: env.PORT,
-         proxy:
-            env.NODE_ENV === 'development'
-               ? {
-                    '/api': {
-                       target: 'http://localhost:5000/api', // Your JSON server port in local dev
-                       changeOrigin: true,
-                       rewrite: function (path) {
-                          return path.replace(/^\/api/, '');
-                       },
-                    },
-                 }
-               : {
-                    '/api': {
-                       target: 'https://jobposter-api.onrender.com/api', // Your JSON server port in local dev
-                       changeOrigin: true,
-                       rewrite: function (path) {
-                          return path.replace(/^\/api/, '');
-                       },
-                    },
-                 }, // No proxy in production, as everything runs on the same domain
+         host: true,
+         port: env.PORT || 3000, // Default to 3000 if PORT is not set
       },
    };
 });
