@@ -18,13 +18,6 @@ export default defineConfig(({ mode }) => {
       server: {
          host: true,
          port: env.PORT || 3000, // Default to 3000 if PORT is not set
-         proxy: {
-            '/api': {
-               target: env.API_URL, // API URL from .env file
-               changeOrigin: true,
-               rewrite: (path) => path.replace(/^\/api/, '/api'),
-            },
-         },
       },
    };
 });
