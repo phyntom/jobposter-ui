@@ -3,7 +3,7 @@ services:
      name: jobposter-ui
      runtime: static
      repo: https://github.com/phyntom/jobposter-ui.git
-     buildCommand: 'yarn && yarn build'
+     buildCommand: 'yarn build'
      staticPublishPath: ./dist
      # Optional: Environment variables
      envVars:
