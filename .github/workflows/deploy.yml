@@ -34,21 +34,22 @@ jobs:
     - name: Debug environment variables
       run: env | grep AWS
 
-    - name: Deploy to AWS S3
-      uses: jakejarvis/s3-sync-action@v0.5.1
+    - name: S3/CloudFront Deploy
+      uses: staevs/s3-deploy-action@1.0.0
+      if: success()
       with:
-        args: --acl public-read --follow-symlinks --delete
+        args: --follow-symlinks --delete --no-progress
       env:
-        AWS_S3_BUCKET: "jobposter-bucketui"
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: 'us-east-1'
-        SOURCE_DIR: './dist'
+        AWS_REGION: "us-east-1"
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        
 
     - name: Invalidate CloudFront
       uses: chetan/invalidate-cloudfront-action@v2
       env:
-        DISTRIBUTION: ${{ secrets.DISTRIBUTION_ID }}
+        DISTRIBUTION: ${{ secrets.AWS_DISTRIBUTION_ID }}
         PATHS: "/index.html"
         AWS_REGION: "us-east-1"
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
