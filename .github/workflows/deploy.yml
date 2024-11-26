@@ -35,6 +35,9 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'us-east-1'
         SOURCE_DIR: './dist'
+        
+    - name: Debug environment variables
+      run: env | grep AWS
 
     - name: Invalidate CloudFront
       uses: chetan/invalidate-cloudfront-action@v2
