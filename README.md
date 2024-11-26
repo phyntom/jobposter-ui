@@ -35,6 +35,9 @@ Find your dream frontend development role with JobPoster. Powered by React, Vite
 
 **Let JobPoster streamline your frontend job search!**
 
+## App deployment
+
+
 ## App Screenshots
 ### Landing 
 ![image](https://drive.google.com/uc?export=view&id=19ksQRLCRUX_SuNufm6AsoJlBkhruaiCV)
